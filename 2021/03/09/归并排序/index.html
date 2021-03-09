@@ -207,15 +207,15 @@
 
         <div class="article-content markdown-body">
             <h3 id="过程理解"><a href="#过程理解" class="headerlink" title="过程理解"></a>过程理解</h3><p>​        归并排序（Merge sort）是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。<br><strong>理解归并排序之前最好先对二分法有一定的理解，对于代码实现也有帮助。</strong> </p>
-<p>以下这张图的步骤描述，相对来说比较清晰：<br><img src="/images/mergeSort1.jpeg" alt="mergeSort1"><br><em>图引自 <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/124356219" >【算法】排序算法之归并排序<i class="fas fa-external-link-alt"></i></a></em> </p>
+<p>以下这张图的步骤描述，相对来说比较清晰：<br><img src="/images/mergeSort/mergeSort1.jpeg" alt="mergeSort1"><br><em>图引自 <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/124356219" >【算法】排序算法之归并排序<i class="fas fa-external-link-alt"></i></a></em> </p>
 <p>​        归并排序是用分治思想，分治法将问题分(divide)成一些小的问题然后递归求解，而治(conquer)的阶段则将分的阶段得到的各答案”修补”在一起，即分而治之。因此规避排序在每一层递归上有三个步骤：</p>
 <ul>
 <li><strong>分解（Divide）</strong>：将 n 个元素分成个含 n/2 个元素的子序列。</li>
 <li><strong>解决（Conquer）</strong>：用合并排序法对两个子序列递归的排序。</li>
 <li><strong>合并（Combine）</strong>：合并两个已排序的子序列已得到排序结果。</li>
 </ul>
-<p><img src="/images/mergeSort2.png" alt="mergeSort2"><br><em>图引自 <a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/chengxiao/p/6194356.html" >图解排序算法(四)之归并排序<i class="fas fa-external-link-alt"></i></a></em> </p>
-<p>转为需要代码实现的时候，即可以借助以下图片来理解一下，不管是使用递归还是使用迭代。<br><img src="/images/mergeSort.gif" alt="mergeSort3"></p>
+<p><img src="/images/mergeSort/mergeSort2.png" alt="mergeSort2"><br><em>图引自 <a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/chengxiao/p/6194356.html" >图解排序算法(四)之归并排序<i class="fas fa-external-link-alt"></i></a></em> </p>
+<p>转为需要代码实现的时候，即可以借助以下图片来理解一下，不管是使用递归还是使用迭代。<br><img src="/images/mergeSort/mergeSort.gif" alt="mergeSort3"></p>
 <p><em>图引自 <a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/merge-sort.html" >1.5 归并排序<i class="fas fa-external-link-alt"></i></a></em> </p>
 <h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p>平均时间复杂度：O(nlogn)<br>空间复杂度：O(n)</p>
 <p>​        从上面的分析不难看出，归并排序的时间复杂度相对稳定，不管元素在什么情况下都要做一样的步骤，所以花销的时间是不变的，因此该算法的最优时间复杂度和最差时间复杂度及平均时间复杂度都是一样的为：O( nlogn )。</p>
@@ -234,7 +234,7 @@
 </blockquote>
 <p>例如 LeetCode 上的这道题 <a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/" >315.计算右侧小于当前元素的个数<i class="fas fa-external-link-alt"></i></a></p>
 <p>结合前面的归并排序过程，不难发现，每次在合并左右两个序列的时候，其实都是在查找逆序对。</p>
-<p><img src="/images/mergeSort3.png" alt="mergeSort3"></p>
+<p><img src="/images/mergeSort/mergeSort3.png" alt="mergeSort3"></p>
 <p>在步骤 c 中，</p>
 <ul>
 <li>先判断 7 和 5，这是一组逆序对</li>
@@ -248,7 +248,7 @@
 </ul>
 <p>通过以上的步骤就能计算出最后总的逆序对。</p>
 <p>这里还有另外一道延伸的题：<a class="link"   target="_blank" rel="noopener" href="https://binarysearch.com/problems/Triple-Inversion" >Triple Inversion<i class="fas fa-external-link-alt"></i></a></p>
-<p>参考：<br><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/noKing/p/7940531.html" >归并排序及优化(Java实现)<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/merge-sort.html" >1.5 归并排序<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/124356219" >【算法】排序算法之归并排序<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/chengxiao/p/6194356.html" >图解排序算法(四)之归并排序<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/e6530cb7aa66" >经典算法问题：数组中的逆序对<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/DERRANTCM/article/details/46761051" >【剑指Offer学习】【面试题36：数组中的逆序对】<i class="fas fa-external-link-alt"></i></a><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/chengxiao/p/6194356.html" >https://www.cnblogs.com/chengxiao/p/6194356.html<i class="fas fa-external-link-alt"></i></a>)</p>
+<p><strong><em>参考：</em></strong><br><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/noKing/p/7940531.html" >归并排序及优化(Java实现)<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/merge-sort.html" >1.5 归并排序<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/124356219" >【算法】排序算法之归并排序<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/chengxiao/p/6194356.html" >图解排序算法(四)之归并排序<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/e6530cb7aa66" >经典算法问题：数组中的逆序对<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/DERRANTCM/article/details/46761051" >【剑指Offer学习】【面试题36：数组中的逆序对】<i class="fas fa-external-link-alt"></i></a><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/chengxiao/p/6194356.html" >https://www.cnblogs.com/chengxiao/p/6194356.html<i class="fas fa-external-link-alt"></i></a>)</p>
 
         </div>
 
