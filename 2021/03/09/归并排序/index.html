@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="yrylalala">
+    
+    <title>
+        
+            归并排序 |
+        
+        笃志
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/MyPhoto.jpeg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"生而为人，你且修身，你且渡人，你且如水，居恶渊而为善，无尤也。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.1"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                笃志
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">归并排序</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/MyPhoto.jpeg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">yrylalala</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-03-09 22:52:36
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">数据结构及算法</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">数据结构及算法</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="过程理解"><a href="#过程理解" class="headerlink" title="过程理解"></a>过程理解</h3><p>​        归并排序（Merge sort）是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。<br><strong>理解归并排序之前最好先对二分法有一定的理解，对于代码实现也有帮助。</strong> </p>
+<p>以下这张图的步骤描述，相对来说比较清晰：<br><img src="/images/mergeSort1.jpeg" alt="mergeSort1"><br><em>图引自 <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/124356219" >【算法】排序算法之归并排序<i class="fas fa-external-link-alt"></i></a></em> </p>
+<p>​        归并排序是用分治思想，分治法将问题分(divide)成一些小的问题然后递归求解，而治(conquer)的阶段则将分的阶段得到的各答案”修补”在一起，即分而治之。因此规避排序在每一层递归上有三个步骤：</p>
+<ul>
+<li><strong>分解（Divide）</strong>：将 n 个元素分成个含 n/2 个元素的子序列。</li>
+<li><strong>解决（Conquer）</strong>：用合并排序法对两个子序列递归的排序。</li>
+<li><strong>合并（Combine）</strong>：合并两个已排序的子序列已得到排序结果。</li>
+</ul>
+<p><img src="/images/mergeSort2.png" alt="mergeSort2"><br><em>图引自 <a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/chengxiao/p/6194356.html" >图解排序算法(四)之归并排序<i class="fas fa-external-link-alt"></i></a></em> </p>
+<p>转为需要代码实现的时候，即可以借助以下图片来理解一下，不管是使用递归还是使用迭代。<br><img src="/images/mergeSort.gif" alt="mergeSort3"></p>
+<p><em>图引自 <a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/merge-sort.html" >1.5 归并排序<i class="fas fa-external-link-alt"></i></a></em> </p>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p>平均时间复杂度：O(nlogn)<br>空间复杂度：O(n)</p>
+<p>​        从上面的分析不难看出，归并排序的时间复杂度相对稳定，不管元素在什么情况下都要做一样的步骤，所以花销的时间是不变的，因此该算法的最优时间复杂度和最差时间复杂度及平均时间复杂度都是一样的为：O( nlogn )。</p>
+<p>​        而空间复杂度则需要考虑在排序的时候需要用到一个临时数组 O(n)，以及递归需要的递归栈空间 O(logn)，则空间复杂度应该为 O(n)。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>Java 代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.bai.mergesort;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Package</span> com.bai.mergesort</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Bai</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2021/3/6 00:33</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> V1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span>: MergeSort</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 归并排序</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: Bai</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2021/3/6 00:33</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span>: 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MergeSort</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 临时数组用于临时存放排序结果</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] arrayTmp;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MergeSort</span><span class="params">(<span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">        arrayTmp = <span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将左右两边已排序的数组重新排序合并</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> array     原数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> left      数组左指针</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> right     数组右指针</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mergeArray</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> index = left;</span><br><span class="line">        <span class="keyword">int</span> i = left;</span><br><span class="line">        <span class="keyword">int</span> j = mid + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* 先将左右两边较小的数放到 tmp 数组中 */</span></span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= right) &#123;</span><br><span class="line">            <span class="keyword">if</span> (array[i] &lt; array[j]) &#123;</span><br><span class="line">                <span class="comment">/**</span></span><br><span class="line"><span class="comment">                 *  等价</span></span><br><span class="line"><span class="comment">                 *  arrayTmp[index] = array[i];</span></span><br><span class="line"><span class="comment">                 *  index++;</span></span><br><span class="line"><span class="comment">                 *  i++;</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">                arrayTmp[index++] = array[i++];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                arrayTmp[index++] = array[j++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* 然后将左边剩下的数填充到 tmp 数组中 */</span></span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid) &#123;</span><br><span class="line">            arrayTmp[index++] = array[i++];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* 将右边剩下的数填充到 tmp 数组中 */</span></span><br><span class="line">        <span class="keyword">while</span> (j &lt;= right) &#123;</span><br><span class="line">            arrayTmp[index++] = array[j++];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* 最后将已排序的数组部分覆盖到原数组 */</span></span><br><span class="line">        index = left;</span><br><span class="line">        <span class="keyword">while</span> (index &lt;= right) &#123;</span><br><span class="line">            array[index] = arrayTmp[index];</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 使用递归对数组进行归并排序</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> array    原数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> left     数组左指针</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> right    数组右指针</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left &gt;= right) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">/* 将数组二分，分别对左右两个数组进行归并排序 */</span></span><br><span class="line">        mergeSort(array, left, mid);</span><br><span class="line">        mergeSort(array, mid + <span class="number">1</span>, right);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* 左右两边已经排序好的数组进行重新排序组合 */</span></span><br><span class="line">        mergeArray(array, left, right);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试验证</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">50</span>, <span class="number">10</span>, <span class="number">90</span>, <span class="number">30</span>, <span class="number">70</span>, <span class="number">40</span>, <span class="number">80</span>, <span class="number">60</span>, <span class="number">20</span>&#125;;</span><br><span class="line">        MergeSort mergeSort = <span class="keyword">new</span> MergeSort(arr.length);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = arr.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        mergeSort.mergeSort(arr, left, right);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">            System.out.print(i + <span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>C++ 代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将分为两边的有序数组，合并为一个有序数组</span></span><br><span class="line"><span class="comment">// [IN] int array[]    原数组</span></span><br><span class="line"><span class="comment">// [IN] int arrayTmp[] 临时数组</span></span><br><span class="line"><span class="comment">// [IN] int left       数组左边指针</span></span><br><span class="line"><span class="comment">// [IN] int right      数组右边指针</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeArray</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[], <span class="keyword">int</span> arrayTmp[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> index = left;</span><br><span class="line">    <span class="keyword">int</span> i = left;</span><br><span class="line">    <span class="keyword">int</span> j = mid + <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 依次比较左右两边的数组，有序放入临时数组中</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= right) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">array</span>[i] &lt; <span class="built_in">array</span>[j]) &#123;</span><br><span class="line">            arrayTmp[index++] =  <span class="built_in">array</span>[i++];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            arrayTmp[index++] =  <span class="built_in">array</span>[j++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 将左侧数组中剩下的数放入临时数组中</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mid) &#123;</span><br><span class="line">        arrayTmp[index++] = <span class="built_in">array</span>[i++];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 将右侧数组中剩下的数放入临时数组中</span></span><br><span class="line">    <span class="keyword">while</span> (j &lt;= right) &#123;</span><br><span class="line">        arrayTmp[index++] = <span class="built_in">array</span>[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 将临时数组中已经排序好的数组覆盖原数组的对应部分</span></span><br><span class="line">    index =  left;</span><br><span class="line">    <span class="keyword">while</span> (index &lt;= right) &#123;</span><br><span class="line">        <span class="built_in">array</span>[index] = arrayTmp[index];</span><br><span class="line">        index++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 递归实现无序数组的归并排序</span></span><br><span class="line"><span class="comment">// [IN] int array[]    原数组</span></span><br><span class="line"><span class="comment">// [IN] int arrayTmp[] 临时数组</span></span><br><span class="line"><span class="comment">// [IN] int left       数组左边指针</span></span><br><span class="line"><span class="comment">// [IN] int right      数组右边指针</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[], <span class="keyword">int</span> arrayTmp[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (left &gt;= right) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> mid = left + (right -  left) / <span class="number">2</span>;</span><br><span class="line">    MergeSort(<span class="built_in">array</span>, arrayTmp, left, mid);</span><br><span class="line">    MergeSort(<span class="built_in">array</span>, arrayTmp, mid + <span class="number">1</span>, right);</span><br><span class="line">    MergeArray(<span class="built_in">array</span>, arrayTmp, left, right);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*****************************************</span></span><br><span class="line"><span class="comment"> * 测试代码</span></span><br><span class="line"><span class="comment"> ****************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> len = <span class="number">9</span>;</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">array</span>[len] = &#123;<span class="number">50</span>, <span class="number">10</span>, <span class="number">90</span>, <span class="number">30</span>, <span class="number">70</span>, <span class="number">40</span>, <span class="number">80</span>, <span class="number">60</span>, <span class="number">20</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> arrayTmp[len];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = len - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    MergeSort(<span class="built_in">array</span>, arrayTmp, left, right);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">array</span>[i] &lt;&lt; <span class="string">&quot;  &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="逆序对"><a href="#逆序对" class="headerlink" title="逆序对"></a>逆序对</h3><p>在进行归并排序的时候，同时也衍生了一个比较巧妙的应用——逆序对。</p>
+<blockquote>
+<p>对于一个包含N个非负整数的数组A[1..n]，如果有i &lt; j，且A[ i ]&gt;A[ j ]，则称(A[ i] ,A[ j] )为数组A中的一个逆序对。</p>
+</blockquote>
+<p>例如 LeetCode 上的这道题 <a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/" >315.计算右侧小于当前元素的个数<i class="fas fa-external-link-alt"></i></a></p>
+<p>结合前面的归并排序过程，不难发现，每次在合并左右两个序列的时候，其实都是在查找逆序对。</p>
+<p><img src="/images/mergeSort3.png" alt="mergeSort3"></p>
+<p>在步骤 c 中，</p>
+<ul>
+<li>先判断 7 和 5，这是一组逆序对</li>
+<li>然后判断 6 和 4，这是第二组逆序对</li>
+</ul>
+<p>在步骤 d 中，比较两个数组 [5, 7] 和 [4, 6]，</p>
+<ul>
+<li>首先 5 &lt; 4，因此在左边数组中会存在两个大于 4 的数，因此这里有两组逆序对，一共 4 组逆序对</li>
+<li>继续比较 5 放到临时队列中</li>
+<li>比较到 7 和 6  的时候，左边数组中只有一个 7 比 6 大，因此这里有一组逆序对，一共 5 组逆序对</li>
+</ul>
+<p>通过以上的步骤就能计算出最后总的逆序对。</p>
+<p>这里还有另外一道延伸的题：<a class="link"   target="_blank" rel="noopener" href="https://binarysearch.com/problems/Triple-Inversion" >Triple Inversion<i class="fas fa-external-link-alt"></i></a></p>
+<p>参考：<br><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/noKing/p/7940531.html" >归并排序及优化(Java实现)<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/merge-sort.html" >1.5 归并排序<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/124356219" >【算法】排序算法之归并排序<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/chengxiao/p/6194356.html" >图解排序算法(四)之归并排序<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/e6530cb7aa66" >经典算法问题：数组中的逆序对<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/DERRANTCM/article/details/46761051" >【剑指Offer学习】【面试题36：数组中的逆序对】<i class="fas fa-external-link-alt"></i></a><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/chengxiao/p/6194356.html" >https://www.cnblogs.com/chengxiao/p/6194356.html<i class="fas fa-external-link-alt"></i></a>)</p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/03/03/821.%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">821.字符的最短距离</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">yrylalala</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.1</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">过程理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E5%BA%8F%E5%AF%B9"><span class="nav-number">4.</span> <span class="nav-text">逆序对</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+    <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="/js/left-side-toggle.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
