@@ -1810,7 +1810,7 @@ pre .javascript .function {
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
-  background: url("/images/bg.svg") center center/cover no-repeat;
+  background: url("/blog/images/bg.svg") center center/cover no-repeat;
   background-position-y: 76px;
 }
 @media (max-width: 780px) {
