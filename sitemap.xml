@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yrylalala.gitee.io/blog/google7b0a4bf2300dc4ab.html</loc>
+    
+    <lastmod>2021-03-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yrylalala.gitee.io/blog/2021/034ff7a6f.html</loc>
     
     <lastmod>2021-03-28</lastmod>
@@ -30,6 +37,13 @@
   </url>
   
   <url>
+    <loc>https://yrylalala.gitee.io/blog/baidu_verify_code-z04X9fhCGo.html</loc>
+    
+    <lastmod>2021-03-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yrylalala.gitee.io/blog/tags/index.html</loc>
     
     <lastmod>2021-03-04</lastmod>
@@ -53,7 +67,7 @@
 
   <url>
     <loc>https://yrylalala.gitee.io/blog</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,42 +75,42 @@
   
   <url>
     <loc>https://yrylalala.gitee.io/blog/tags/LeetCode/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yrylalala.gitee.io/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yrylalala.gitee.io/blog/tags/%E6%A0%88/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yrylalala.gitee.io/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yrylalala.gitee.io/blog/tags/%E9%80%92%E5%BD%92/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yrylalala.gitee.io/blog/tags/%E6%95%B0%E7%BB%84/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -105,7 +119,7 @@
   
   <url>
     <loc>https://yrylalala.gitee.io/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
